@@ -1,3 +1,4 @@
+import {} from 'jasmine';
 import { AppPage } from './app.po';
 
 describe('stream-example-angular-cli App', () => {
@@ -9,6 +10,8 @@ describe('stream-example-angular-cli App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    page.getParagraphText().then((text) => { 
+      expect(text).toEqual('Welcome to app!');
+    });
   });
 });
